@@ -18,11 +18,7 @@
   position: absolute;
   width: 100vw;
 }
-.mwg_effect001 .word3 {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 20px;
-}
+
 .mwg_effect001 .word1 {
   padding-left: 20px;
 }
@@ -80,21 +76,43 @@
 }
 
 .mwg_effect000 .medias {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: repeat(4, 1fr);
   gap: 1vw;
-  padding-top: 80px;
+  padding: 10vh 0;
 }
 .mwg_effect000 .medias img {
-  width: 11vw;
-  height: 11vw;
+  width: 10rem;
+  height: 10rem;
   object-fit: contain;
   border-radius: 4%;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   pointer-events: none;
   will-change: transform;
 }
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #f9f9f9;
+}
 
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 8s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 @media (max-width: 768px) {
   .mwg_effect000 .header {
     display: grid;
